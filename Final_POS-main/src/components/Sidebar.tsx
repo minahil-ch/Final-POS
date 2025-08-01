@@ -19,21 +19,23 @@ import { ChevronDown, ChevronRight } from 'lucide-react';
 const menuItems = [
   { label: 'Dashboard', icon: <Home />, href: '/dashboard' },
   {
-    label: 'Customers',
-    icon: <Users />,
-    subItems: [
-      { label: 'All Customers', href: '/customers' },
-      { label: 'Add Customer', href: '/customers/add' },
-    ],
-  },
-  {
-    label: 'Sales',
-    icon: <ShoppingCart />,
-    subItems: [
-      { label: 'New Sale', href: '/sales/new' },
-      { label: 'Sales Report', href: '/sales/report' },
-    ],
-  },
+  label: 'Customers',
+  icon: <Users />,
+  subItems: [
+    { label: 'All Customers', href: '/customers?tab=all' },
+    { label: 'Add Customer', href: '/customers?tab=add' }, // ✅ fixed href
+  ],
+},
+
+ {
+  label: 'Sales',
+  icon: <ShoppingCart />,
+  subItems: [
+    { label: 'New Sale', href: '/sales?tab=new' },
+    { label: 'Sales Report', href: '/sales?tab=report' },
+  ],
+},
+
   {
     label: 'Orders',
     icon: <ClipboardList />,
@@ -46,8 +48,8 @@ const menuItems = [
     label: 'Inventory',
     icon: <Layers />,
     subItems: [
-      { label: 'Inventory Logs', href: '/inventory/logs' },
-      { label: 'Restock', href: '/inventory/restock' },
+     { label: 'Inventory Logs', href: '/inventory/logs' },
+    { label: 'Restock', href: '/inventory/restock' },
     ],
   },
   {
@@ -55,7 +57,7 @@ const menuItems = [
     icon: <Package />,
     subItems: [
       { label: 'All Products', href: '/products' },
-      { label: 'Add Product', href: '/products/add' },
+       { label: 'Add Product', href: '/products/allproducts/addproduct' },
     ],
   },
   {
@@ -134,13 +136,13 @@ const [openMenu, setOpenMenu] = useState<string | null>(null);
 )}
 {!collapsed && item.subItems && openMenu === item.label && (
   <div
-    className="absolute left-full top-0 mt-2 ml-2 bg-purple-100 text-black shadow-md rounded-xl p-2 space-y-1 z-50 w-48"
+    className="absolute left-full top-0 mt-2 ml-1 bg-purple-100 text-black shadow-md rounded-xl p-2 space-y-1 z-50 w-48"
   >
     {item.subItems.map((sub, i) => (
       <Link
         href={sub.href}
         key={i}
-        className="block px-4 py-2 text-sm rounded hover:bg-purple-200"
+        className="block px-2 py-1 text-sm rounded hover:bg-purple-200"
       >
         {sub.label}
       </Link>
