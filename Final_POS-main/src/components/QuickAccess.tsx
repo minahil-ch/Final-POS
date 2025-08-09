@@ -10,7 +10,8 @@ import {
 
 export default function QuickAccess() {
   return (
-    <div className="bg-white dark:bg-gray-800 p-4 rounded-2xl shadow-md text-sm w-full h-full flex flex-col justify-between">
+   <div className="bg-white dark:bg-black text-gray-800 dark:text-white p-4 rounded-2xl shadow-md text-sm w-full h-full flex flex-col justify-between">
+
       <h2 className="text-lg font-semibold text-gray-800 dark:text-white mb-3 border-b pb-2 dark:border-gray-700">
         Quick Access
       </h2>

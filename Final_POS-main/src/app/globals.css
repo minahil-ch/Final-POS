@@ -111,6 +111,18 @@
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 }
+/* Add this to globals.css */
+html {
+  transition: background 0.8s ease-in-out;
+  background-color: #ffffff;
+}
+
+html.dark {
+  background-color: #000000;
+  background-image: linear-gradient(135deg, #000000 0%, #000000 100%);
+  transition: background 0.8s ease-in-out;
+}
+
 
 @layer base {
   * {
